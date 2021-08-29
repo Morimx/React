@@ -43,7 +43,6 @@ function Navbar() {
         </ReactBootStrap.Navbar.Collapse>
         <CartWiget />
       </ReactBootStrap.Container>
-   
     </ReactBootStrap.Navbar>
   );
 }
