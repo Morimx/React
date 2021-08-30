@@ -1,50 +1,50 @@
-import * as ReactBootStrap from "react-bootstrap";
+import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
 import CartWiget from './CartWiget.jsx';
 import Brand from "./Logo.jsx";
 
-function Navbar() {
+function Navbarxd() {
   return (
-    <ReactBootStrap.Navbar
+    <Navbar
       collapseOnSelect
       expand="lg"
       bg="dark"
       variant="dark">
-      <ReactBootStrap.Container>
-        <ReactBootStrap.Navbar.Brand href="#home">
+      <Container>
+        <Navbar.Brand href="#home">
           <Brand />
-        </ReactBootStrap.Navbar.Brand>
-        <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
-          <ReactBootStrap.Nav className="me-auto">
-            <ReactBootStrap.Nav.Link href="#features">
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">
               Componentes
-            </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="#pricing"></ReactBootStrap.Nav.Link>
-            <ReactBootStrap.NavDropdown
+            </Nav.Link>
+            <Nav.Link href="#pricing"></Nav.Link>
+            <NavDropdown
               title="Servicios"
               id="collasible-nav-dropdown"
             >
-              <ReactBootStrap.NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="#action/3.1">
                 Instalacion de camaras de seguridad
-              </ReactBootStrap.NavDropdown.Item>
-              <ReactBootStrap.NavDropdown.Item href="#action/3.2">
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
                 Instalacion de Software
-              </ReactBootStrap.NavDropdown.Item>
-              <ReactBootStrap.NavDropdown.Item href="#action/3.3">
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
                 Reparacion de PC
-              </ReactBootStrap.NavDropdown.Item>
-              <ReactBootStrap.NavDropdown.Divider />
-              <ReactBootStrap.NavDropdown.Item href="#action/3.4">
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
                 Presupuesto personalizado
-              </ReactBootStrap.NavDropdown.Item>
-            </ReactBootStrap.NavDropdown>
-          </ReactBootStrap.Nav>
-          <ReactBootStrap.Nav></ReactBootStrap.Nav>
-        </ReactBootStrap.Navbar.Collapse>
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav></Nav>
+        </Navbar.Collapse>
         <CartWiget />
-      </ReactBootStrap.Container>
-    </ReactBootStrap.Navbar>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default Navbarxd;
