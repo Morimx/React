@@ -1,5 +1,5 @@
 import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
-import CartWiget from './CartWiget.jsx';
+import CartWiget from './CartWiget/CartWiget.jsx'
 import Brand from "./Logo.jsx";
 
 function Navbarxd() {

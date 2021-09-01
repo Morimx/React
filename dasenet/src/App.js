@@ -7,12 +7,11 @@ import ItemListContainer from "./components/Container/ItemListContainer";
 
 function App() {
   return (
-    <div>
-      <header>
+    <>
         <Navbar />
-      </header>
+      
       <ItemListContainer mensaje='Hola Bienvenidos' />
-    </div>
+    </>
   );
 }
 
