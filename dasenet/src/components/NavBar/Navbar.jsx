@@ -17,21 +17,21 @@ function Navbarxd() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">
-              Componentes
+              Servicios
             </Nav.Link>
             <Nav.Link href="#pricing"></Nav.Link>
             <NavDropdown
-              title="Servicios"
+              title="Componentes"
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item href="#action/3.1">
-                Instalacion de camaras de seguridad
+                Microprocesadores
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Instalacion de Software
+                Memorias Ram
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">
-                Reparacion de PC
+                Placas de video
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
