@@ -47,13 +47,13 @@ useEffect(() => {
 }, []);
 
     return (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mr-2">
 
         {loading ? <h2 className="fonts">Loading...</h2>
         :
         productos.map(productos => 
             
-        <div key={productos.id} className="card ">
+        <div key={productos.id} className="card">
             <img className="card-img-top fotoproductos img-fluid" src={productos.foto} alt="Card foto cap" />
             <div className="card-body fotoproductos">
             <h5 className="card-title">{productos.nombre}</h5>
