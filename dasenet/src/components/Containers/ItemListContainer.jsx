@@ -16,7 +16,7 @@ export default function Item() {
   }, []);
 
   return (
-    <div className="d-flex justify-content-center mr-2">
+    <div className="d-flex justify-content-center mr-2 mt-5">
       {loading ? (
         <h2 className="fonts">Loading...</h2>
       ) : (
