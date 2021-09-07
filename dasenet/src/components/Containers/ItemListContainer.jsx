@@ -18,7 +18,10 @@ export default function Item() {
   return (
     <div className="d-flex justify-content-center mr-2 mt-5">
       {loading ? (
-        <h2 className="fonts">Loading...</h2>
+        <img
+          alt="Loading"
+          src="https://i.pinimg.com/originals/90/80/60/9080607321ab98fa3e70dd24b2513a20.gif"
+        />
       ) : (
         <ItemList productos={productosState} />
       )}
