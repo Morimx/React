@@ -1,11 +1,9 @@
-import React from 'react'
-import './NavBar.css'
-import logo from './logo.png'
+import React from "react";
+import "./NavBar.css";
+import logo from "./logo.png";
 
 function Brand() {
-    return (
-        <img src={logo} alt='logo' className="logo-navbar" />
-    )
+  return <img src={logo} alt="logo" className="logo-navbar" />;
 }
 
-export default Brand
+export default Brand;
