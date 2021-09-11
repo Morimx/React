@@ -2,10 +2,6 @@ import React from "react";
 import { FaCartArrowDown } from "react-icons/fa";
 
 function CartWiget() {
-  return (
-    <a href="./index.html">
-      <FaCartArrowDown color="white" size={26} />
-    </a>
-  );
+  return <FaCartArrowDown color="white" size={26} />;
 }
 export default CartWiget;
