@@ -1,7 +1,7 @@
 const productos = [
   {
     nombre: "Formateo de PC",
-    id: 1,
+    id: "1",
     precio: 2000,
     tipo: "servicios",
     descripcion:
@@ -11,7 +11,7 @@ const productos = [
   },
   {
     nombre: "Backup Cloud",
-    id: 2,
+    id: "2",
     precio: 5000,
     tipo: "servicios",
     cantidad: 1,
@@ -26,14 +26,14 @@ const productos = [
     cantidad: 1,
     descripcion:
       "Este servicio incluye una cotizacion para el servicio de video vigilancia, Camaras, NVR, DVR, etc.",
-    id: 3,
+    id: "3",
     foto: "http://www.rrhhdigital.com/userfiles/videovigilancia-camaras-empresa.jpg",
   },
 
   {
     nombre: "Intel Core i5-10400F",
     precio: 32000,
-    id: 4,
+    id: "4",
     tipo: "CPU",
     cantidad: 5,
     descripcion: (
@@ -47,7 +47,7 @@ const productos = [
     nombre:
       "Memoria RAM Trident Z RGB gamer 16GB 2x8GB G.Skill F4-3200C16D-16GTZR",
     precio: 21000,
-    id: 5,
+    id: "5",
     tipo: "Memorias",
     cantidad: 10,
     descripcion: (
@@ -61,7 +61,7 @@ const productos = [
   {
     nombre: "Placa De Video Igame Geforce Rtx3080ti Rtx 3080 Ti Vulcan 12",
     precio: 371000,
-    id: 6,
+    id: "6",
     tipo: "VGA",
     cantidad: 15,
     descripcion: (
@@ -77,5 +77,5 @@ const productos = [
 export const getFetch = new Promise((resolve) => {
   setTimeout(() => {
     resolve(productos);
-  }, 3250);
+  }, 1);
 });

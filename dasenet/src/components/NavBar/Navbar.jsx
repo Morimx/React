@@ -15,22 +15,22 @@ function Navbarxd() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/categoria/servicios">
-              <Nav.Link href="#features">Servicios</Nav.Link>
+            <Link to="/categoria/servicios" className="links">
+              <Nav.Link href="#servicios">Servicios</Nav.Link>
             </Link>
-            <Nav.Link href="#pricing"></Nav.Link>
+
             <NavDropdown title="Componentes" id="collasible-nav-dropdown">
-              <Link to="/categoria/CPU">
+              <Link to="/categoria/CPU" className="links">
                 <NavDropdown.Item href="#action/3.1">
                   Microprocesadores
                 </NavDropdown.Item>
               </Link>
-              <Link to="/categoria/Memorias">
+              <Link to="/categoria/Memorias" className="links">
                 <NavDropdown.Item href="#action/3.2">
                   Memorias Ram
                 </NavDropdown.Item>
               </Link>
-              <Link to="/categoria/VGA">
+              <Link to="/categoria/VGA" className="links">
                 <NavDropdown.Item href="#action/3.3">
                   Placas de video
                 </NavDropdown.Item>

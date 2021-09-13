@@ -10,15 +10,12 @@ export default function Item() {
   const [loading, setLoading] = useState(true);
   const { idCategoria } = useParams();
 
-  console.log(idCategoria);
   useEffect(() => {
     if (idCategoria) {
-      getFetch
-        .then((res) => {
-          setProductos(res.filter((prod) => prod.tipo === idCategoria));
-          setLoading(false);
-        })
-        .catch((error) => console.log(error));
+      getFetch.then((res) => {
+        setProductos(res.filter((prod) => prod.tipo === idCategoria));
+        setLoading(false);
+      });
     } else {
       getFetch
         .then((res) => {
@@ -29,8 +26,9 @@ export default function Item() {
     }
   }, [idCategoria]);
 
+  console.log(productosState);
   return (
-    <div className="d-flex justify-content-center mr-2 mt-5">
+    <div className="d-flex justify-content-center mt-3">
       {loading ? (
         <img
           alt="Loading"

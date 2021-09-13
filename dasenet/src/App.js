@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./components/Containers/ItemListContainer";
 import CartContainer from "./components/Containers/CartContainer";
+import ItemDetailContainer from "./components/Containers/ItemDetailContainer";
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
           exact
           path="/categoria/:idCategoria"
           component={ItemListContainer}
+        />
+        <Route
+          exact
+          path="/Items/:idCategoria/:idProducto"
+          component={ItemDetailContainer}
         />
       </Switch>
     </Router>

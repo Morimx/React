@@ -1,13 +1,15 @@
-.fonts{
-    color: white;
-
+.fonts {
+  color: white;
 }
 
-.cardbody{
-    width: 18rem
+.fotoproductos {
+  width: 250px;
+  height: 180px;
 }
-
-.fotoproductos{
-    width: 300px;
-    height: 180px;
+.cardsStyle {
+  background-color: rgb(220, 220, 241);
+  margin: 10px;
+  border-style: solid;
+  border-color: grey;
+  height: 30rem;
 }
