@@ -41,7 +41,7 @@ const productos = [
         Mas Informacion del Producto
       </a>
     ),
-    foto: "https://startuppc.com.ar/wp-content/uploads/2020/12/71bdmuhAypL._AC_SL1500_.jpg",
+    foto: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411498_sd.jpg;maxHeight=640;maxWidth=550",
   },
   {
     nombre:
