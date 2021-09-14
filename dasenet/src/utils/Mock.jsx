@@ -58,8 +58,13 @@ const productos = [
     tipo: "VGA",
     cantidad: 15,
     descripcion: (
-      <a href="https://www.nvidia.com/es-la/geforce/graphics-cards/30-series/rtx-3080-3080ti/">
-        Mas Informacion del Producto
+      <a
+        href="https://www.nvidia.com/es-la/geforce/graphics-cards/30-series/rtx-3080-3080ti/"
+        className="text-decoration-none"
+      >
+        <button className="btn btn-warning btn-lg text-decoration-none">
+          Mas Informacion del Producto
+        </button>
       </a>
     ),
 

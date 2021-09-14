@@ -16,6 +16,7 @@ export default function Items({ productos }) {
       <div className="card-body fotoproductos">
         <h5 className="card-title text-center">{productos.nombre}</h5>
         <hr />
+
         <h5 className="precios">${productos.precio}</h5>
       </div>
       <hr />

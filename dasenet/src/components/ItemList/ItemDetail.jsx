@@ -8,13 +8,13 @@ export default function ItemDetail({ productos }) {
     <>
       {productos.map((unidad) => (
         <div
-          className="row d-flex justify-content-center detail_container py-2"
+          className="row d-flex justify-content-center detail_container"
           key={unidad.id}
         >
           <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
             <img
               src={unidad.foto}
-              className="ml-4 mb-3 imgDetail"
+              className="imgDetail"
               alt={unidad.titulo}
             ></img>
           </div>
