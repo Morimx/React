@@ -41,7 +41,7 @@ const productos = [
     foto: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6411/6411498_sd.jpg;maxHeight=640;maxWidth=550",
   },
   {
-    nombre: "Memoria Trident Z RGB 16GB G.Skill",
+    nombre: "RAM RGB 16GB GSkill",
     precio: 21000,
     id: "5",
     tipo: "Memorias",
