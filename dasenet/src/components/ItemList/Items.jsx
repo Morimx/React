@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../Containers/Item.css";
 
 export default function Items({ productos }) {
   const linksbyid = `/Items/${productos.tipo}/${productos.id}`;
@@ -13,9 +14,9 @@ export default function Items({ productos }) {
       />
 
       <div className="card-body fotoproductos">
-        <h5 className="card-title">{productos.nombre}</h5>
+        <h5 className="card-title text-center">{productos.nombre}</h5>
         <hr />
-        <div>{productos.descripcion}</div>
+        <h5 className="precios">${productos.precio}</h5>
       </div>
       <hr />
       <div className="card-footer">

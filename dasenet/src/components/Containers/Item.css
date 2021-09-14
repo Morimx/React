@@ -13,3 +13,9 @@
   border-color: grey;
   height: 30rem;
 }
+
+.precios {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+}

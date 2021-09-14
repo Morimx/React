@@ -26,7 +26,6 @@ export default function Item() {
     }
   }, [idCategoria]);
 
-  console.log(productosState);
   return (
     <div className="d-flex justify-content-center mt-3">
       {loading ? (
