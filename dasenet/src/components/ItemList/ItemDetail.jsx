@@ -1,9 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import "./ItemDetail.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ItemCount } from "./ItemCount";
 
 export default function ItemDetail({ productos }) {
+  const [statusBoton, setstatusBoton] = useState(true);
+
+  const onAdd = (cant) => {
+    console.log(cant);
+    setstatusBoton(false);
+  };
+
   return (
     <>
       {productos.map((unidad) => (
@@ -27,10 +35,20 @@ export default function ItemDetail({ productos }) {
                   {unidad.descripcion}
                 </p>
                 <p className=" card-text text-center fonts">{unidad.precio}</p>
-                <div className="buy d-flex containerBtn">
-                  <Link to="/">
-                    <button className="btn buyBtn">Volver</button>
-                  </Link>
+                <div className="buy d-flex flex-row containerBtn">
+                  <div>
+                    {statusBoton ? (
+                      <ItemCount
+                        initial={1}
+                        stock={unidad.cantidad}
+                        onAdd={onAdd}
+                      />
+                    ) : (
+                      <Link to="/cart">
+                        <button className="btn buyBtn">Terminar Compra</button>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

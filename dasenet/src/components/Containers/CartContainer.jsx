@@ -1,6 +1,7 @@
 import React from "react";
+import Cart from "../Cart/Cart.jsx";
 import "./Item.css";
 
 export default function CartContainer() {
-  return <h1 className="fonts">Futuro Carrito here</h1>;
+  return <Cart />;
 }

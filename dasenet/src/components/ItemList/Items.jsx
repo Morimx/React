@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../Containers/Item.css";
-import Counter from "./ItemCount";
 
 export default function Items({ productos }) {
   const linksbyid = `/Items/${productos.tipo}/${productos.id}`;
@@ -19,18 +18,15 @@ export default function Items({ productos }) {
         <hr />
 
         <h5 className="precios">${productos.precio}</h5>
-        <Counter />
       </div>
 
       <div className="card-footer">
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-center">
           <Link to={linksbyid}>
-            <button className="btn btn-primary" id={productos.id}>
+            <button className="btn buyBtn" id={productos.id}>
               Detalle
             </button>
           </Link>
-
-          <button className="btn btn-success boton">Agregar al carrito</button>
         </div>
       </div>
     </div>

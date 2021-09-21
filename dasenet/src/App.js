@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./components/Containers/ItemListContainer";
 import CartContainer from "./components/Containers/CartContainer";
 import ItemDetailContainer from "./components/Containers/ItemDetailContainer";
-import { CartContext } from "./Context/CartContext";
+import CartContext from "./Context/CartContext";
 
 function App() {
   return (
