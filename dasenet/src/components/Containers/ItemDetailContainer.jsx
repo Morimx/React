@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Item.css";
 import { getFetch } from "../../utils/Mock";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemList/ItemDetail";
+import ItemListDetail from "../ItemList/ItemListDetail";
 
 export default function ItemDetailContainer() {
   const [productosID, setProductos] = useState([]);
@@ -38,7 +38,7 @@ export default function ItemDetailContainer() {
             src="https://i.pinimg.com/originals/90/80/60/9080607321ab98fa3e70dd24b2513a20.gif"
           />
         ) : (
-          <ItemDetail productos={productosID} />
+          <ItemListDetail productos={productosID} />
         )}
       </div>
     </>

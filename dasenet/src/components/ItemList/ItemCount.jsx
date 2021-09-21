@@ -20,6 +20,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   const agregarCarrito = () => {
     onAdd(count);
   };
+
   return (
     <>
       <div className="d-flex flex-column bd-highlight mb-3">
@@ -27,7 +28,9 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
           <button onClick={restar} className="buyBtn">
             -
           </button>
-          <label className="buyBtn">{count}</label>
+          <label className="buyBtn" id="counter">
+            {count}
+          </label>
 
           <button onClick={sumar} className="buyBtn">
             +
