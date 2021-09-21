@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-export const ItemCount = ({ stock, initial, onAdd }) => {
+import "./ItemCount.css";
+export const ItemCount = ({ stock, initial, onAdd, precioDelProducto }) => {
   const [count, setCount] = useState(initial);
 
   function sumar() {
@@ -24,11 +24,14 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <div className="d-flex flex-column bd-highlight mb-3">
+        <label className=" text-center precio">
+          ${count * precioDelProducto}
+        </label>
         <div className="bd-highlight text-center">
           <button onClick={restar} className="buyBtn">
             -
           </button>
-          <label className="buyBtn" id="counter">
+          <label className="buyBtn" id="counter" type="text">
             {count}
           </label>
 

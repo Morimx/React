@@ -7,8 +7,8 @@ import { ItemCount } from "./ItemCount";
 export default function ItemDetail({ productos }) {
   const [statusBoton, setstatusBoton] = useState(true);
 
-  const onAdd = (cant) => {
-    console.log(cant);
+  const onAdd = (count) => {
+    console.log(count * productos.precio);
     setstatusBoton(false);
   };
 
@@ -33,7 +33,7 @@ export default function ItemDetail({ productos }) {
               <p className="product_desc text-center fonts">
                 {productos.descripcion}
               </p>
-              <p className=" card-text text-center fonts">{productos.precio}</p>
+
               <div className="buy d-flex flex-row containerBtn">
                 <div>
                   {statusBoton ? (
@@ -41,6 +41,7 @@ export default function ItemDetail({ productos }) {
                       initial={1}
                       stock={productos.cantidad}
                       onAdd={onAdd}
+                      precioDelProducto={productos.precio}
                     />
                   ) : (
                     <Link to="/cart">
