@@ -7,8 +7,7 @@ import { ItemCount } from "./ItemCount";
 export default function ItemDetail({ productos }) {
   const [statusBoton, setstatusBoton] = useState(true);
 
-  const onAdd = (count) => {
-    console.log(count * productos.precio);
+  const onAdd = () => {
     setstatusBoton(false);
   };
 
@@ -42,6 +41,8 @@ export default function ItemDetail({ productos }) {
                       stock={productos.cantidad}
                       onAdd={onAdd}
                       precioDelProducto={productos.precio}
+                      idDelProducto={productos.id}
+                      nombreDelProducto={productos.nombre}
                     />
                   ) : (
                     <Link to="/cart">

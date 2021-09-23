@@ -1,8 +1,10 @@
-//import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-//import CartContext from "../../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 
 const Cart = () => {
+  const [context] = useContext(CartContext);
+
   const messageConditional = (
     <div className="card text-center cart-message">
       <div className="card-header">Ops!</div>
@@ -12,6 +14,18 @@ const Cart = () => {
         <Link to="/" className="btn btn-primary">
           Ir a comprar
         </Link>
+        <div>
+          {context.map((item) => {
+            return (
+              <>
+                {" "}
+                <div>
+                  {item.nombre} {item.precio}
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
       <div className="card-footer text-muted">D@senet</div>
     </div>
