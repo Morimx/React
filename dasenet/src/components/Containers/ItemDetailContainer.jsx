@@ -27,8 +27,6 @@ export default function ItemDetailContainer() {
     }
   }, [idProducto]);
 
-  console.log(productosID);
-
   return (
     <>
       <div className="d-flex justify-content-center mt-3">

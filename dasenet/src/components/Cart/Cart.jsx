@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
 
 const Cart = () => {
-  const [context] = useContext(CartContext);
+  const [context, setContext] = useContext(CartContext);
 
+  const limpiarCarrito = () => {
+    setContext([]);
+  };
   const messageConditional = (
     <div className="card text-center cart-message">
       <div className="card-header">Ops!</div>
@@ -15,7 +18,9 @@ const Cart = () => {
           Volver a la pagina principal
         </Link>
         <div>
+          {console.log("Hola soy context", context[0])}
           {context.map((producto) => {
+            console.log(producto);
             return (
               <>
                 {" "}
@@ -27,7 +32,7 @@ const Cart = () => {
             );
           })}
         </div>
-        <button>Limpiar carrito</button>
+        <button onClick={limpiarCarrito}>Limpiar carrito</button>
       </div>
       <div className="card-footer text-muted">D@senet</div>
     </div>

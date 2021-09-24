@@ -21,16 +21,24 @@ export const ItemCount = ({ initial, onAdd, producto }) => {
     }
   }
 
+  const isInCarrito = (producto) => {
+    let checkCarrito = false;
+    context.forEach((cartItem) => {
+      if (cartItem.item.id === producto.id) {
+        checkCarrito = true;
+      }
+    });
+    return checkCarrito;
+  };
+
   const agregarCarrito = (producto, count) => {
     onAdd(count);
-    setContext([
-      ...context,
-      {
-        item: producto,
-        quantity: count,
-      },
-    ]);
-    console.log(context);
+    const estA = isInCarrito(producto);
+    if (estA) {
+      alert("Este producto ya se encuentra en el carrito");
+    } else {
+      setContext([...context, { item: producto, quantity: count }]);
+    }
   };
 
   return (
