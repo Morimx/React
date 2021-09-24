@@ -36,14 +36,7 @@ export default function ItemDetail({ productos }) {
               <div className="buy d-flex flex-row containerBtn">
                 <div>
                   {statusBoton ? (
-                    <ItemCount
-                      initial={1}
-                      stock={productos.cantidad}
-                      onAdd={onAdd}
-                      precioDelProducto={productos.precio}
-                      idDelProducto={productos.id}
-                      nombreDelProducto={productos.nombre}
-                    />
+                    <ItemCount initial={1} producto={productos} onAdd={onAdd} />
                   ) : (
                     <Link to="/cart">
                       <button className="btn buyBtn">Terminar Compra</button>

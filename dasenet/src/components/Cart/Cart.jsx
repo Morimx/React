@@ -10,22 +10,24 @@ const Cart = () => {
       <div className="card-header">Ops!</div>
       <div className="card-body">
         <h5 className="card-title">¡Tu carrito está vacío!</h5>
-        <p className="card-text">¿No sabés qué comprar?</p>
+
         <Link to="/" className="btn btn-primary">
-          Ir a comprar
+          Volver a la pagina principal
         </Link>
         <div>
-          {context.map((item) => {
+          {context.map((producto) => {
             return (
               <>
                 {" "}
                 <div>
-                  {item.nombre} {item.precio}
+                  {producto.item.nombre} {producto.quantity}{" "}
+                  {producto.item.precio * producto.quantity}
                 </div>
               </>
             );
           })}
         </div>
+        <button>Limpiar carrito</button>
       </div>
       <div className="card-footer text-muted">D@senet</div>
     </div>

@@ -9,10 +9,10 @@ import ItemDetailContainer from "./components/Containers/ItemDetailContainer";
 import CartContext from "./Context/CartContext";
 
 function App() {
-  const Test = useState([]);
+  const carritoDeCompras = useState([]);
 
   return (
-    <CartContext.Provider value={Test}>
+    <CartContext.Provider value={carritoDeCompras}>
       <Router>
         <Navbar />
 
