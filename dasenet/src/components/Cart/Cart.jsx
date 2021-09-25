@@ -10,15 +10,13 @@ const Cart = () => {
   };
   const messageConditional = (
     <div className="card text-center cart-message">
-      <div className="card-header">Ops!</div>
       <div className="card-body">
-        <h5 className="card-title">¡Tu carrito está vacío!</h5>
+        <h5 className="card-title">Tu carrito</h5>
 
         <Link to="/" className="btn btn-primary">
           Volver a la pagina principal
         </Link>
         <div>
-          {console.log("Hola soy context", context[0])}
           {context.map((producto) => {
             console.log(producto);
             return (
