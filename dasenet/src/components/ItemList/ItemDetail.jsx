@@ -3,12 +3,15 @@ import "./ItemDetail.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemCount } from "./ItemCount";
+import { CartContextUse } from "../../Context/CartContext";
 
 export default function ItemDetail({ productos }) {
   const [statusBoton, setstatusBoton] = useState(true);
+  const { addItem } = CartContextUse();
 
-  const onAdd = () => {
+  const onAdd = (qty) => {
     setstatusBoton(false);
+    addItem(productos, qty);
   };
 
   return (
@@ -36,9 +39,9 @@ export default function ItemDetail({ productos }) {
               <div className="buy d-flex flex-row containerBtn">
                 <div>
                   {statusBoton ? (
-                    <ItemCount initial={1} producto={productos} onAdd={onAdd} />
+                    <ItemCount producto={productos} onAdd={onAdd} />
                   ) : (
-                    <Link to="/cart">
+                    <Link to="/carrito">
                       <button className="btn buyBtn">Terminar Compra</button>
                     </Link>
                   )}

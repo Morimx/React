@@ -1,11 +1,9 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../../Context/CartContext";
 import "./ItemCount.css";
 
-export const ItemCount = ({ initial, onAdd, producto }) => {
-  const [count, setCount] = useState(initial);
-  const [context, setContext] = useContext(CartContext);
+export const ItemCount = ({ onAdd, producto }) => {
+  const [count, setCount] = useState(1);
 
   function sumar() {
     if (count < producto.cantidad) {
@@ -20,26 +18,6 @@ export const ItemCount = ({ initial, onAdd, producto }) => {
       setCount(count - 1);
     }
   }
-
-  const isInCarrito = (producto) => {
-    let checkCarrito = false;
-    context.forEach((cartItem) => {
-      if (cartItem.item.id === producto.id) {
-        checkCarrito = true;
-      }
-    });
-    return checkCarrito;
-  };
-
-  const agregarCarrito = (producto, count) => {
-    onAdd(count);
-    const isInCart = isInCarrito(producto);
-    if (isInCart) {
-      alert("Este producto ya se encuentra en el carrito");
-    } else {
-      setContext([...context, { item: producto, quantity: count }]);
-    }
-  };
 
   return (
     <>
@@ -63,10 +41,7 @@ export const ItemCount = ({ initial, onAdd, producto }) => {
           <Link to="/">
             <button className="buyBtn">Volver</button>
           </Link>
-          <button
-            onClick={() => agregarCarrito(producto, count)}
-            className="buyBtn"
-          >
+          <button className="buyBtn" onClick={() => onAdd(count)}>
             Agregar al Carrito
           </button>
         </div>

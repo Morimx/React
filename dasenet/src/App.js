@@ -1,24 +1,21 @@
 import "./App.css";
-import { useState } from "react";
 import Navbar from "../src/components/NavBar/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./components/Containers/ItemListContainer";
 import CartContainer from "./components/Containers/CartContainer";
 import ItemDetailContainer from "./components/Containers/ItemDetailContainer";
-import CartContext from "./Context/CartContext";
+import CartContextProvider from "./Context/CartContext";
 
 function App() {
-  const carritoDeCompras = useState([]);
-
   return (
-    <CartContext.Provider value={carritoDeCompras}>
+    <CartContextProvider>
       <Router>
         <Navbar />
 
         <Switch>
           <Route exact path="/" component={ItemListContainer} />
-          <Route exact path="/cart" component={CartContainer} />
+          <Route exact path="/carrito" component={CartContainer} />
           <Route
             exact
             path="/categoria/:idCategoria"
@@ -31,7 +28,7 @@ function App() {
           />
         </Switch>
       </Router>
-    </CartContext.Provider>
+    </CartContextProvider>
   );
 }
 

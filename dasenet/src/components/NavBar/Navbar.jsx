@@ -43,7 +43,7 @@ function Navbarxd() {
           </Nav>
           <Nav></Nav>
         </Navbar.Collapse>
-        <Link to="/cart">
+        <Link to="/carrito">
           <CartWiget />
         </Link>
       </Container>
