@@ -33,8 +33,8 @@ export const ItemCount = ({ initial, onAdd, producto }) => {
 
   const agregarCarrito = (producto, count) => {
     onAdd(count);
-    const estA = isInCarrito(producto);
-    if (estA) {
+    const isInCart = isInCarrito(producto);
+    if (isInCart) {
       alert("Este producto ya se encuentra en el carrito");
     } else {
       setContext([...context, { item: producto, quantity: count }]);
