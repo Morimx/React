@@ -3,10 +3,18 @@ import { CartContextUse } from "../../Context/CartContext";
 
 export default function Carrito() {
   const { clear, removeItem, cart } = CartContextUse();
+  const totalCarrito = cart.map(
+    (unidad) => unidad.quantity * unidad.item.precio
+  );
+  let sumaTotal = 0;
+  for (let i = 0; i < totalCarrito.length; i++) {
+    sumaTotal += totalCarrito[i];
+  }
 
   return (
     <>
       <h1 className=" text-center fonts">Tu Carrito</h1>
+      <h3 className="fonts text-center">Total del carrito ${sumaTotal}</h3>
       <div>
         <div className="d-flex justify-content-center">
           <button className="btn buyBtn " onClick={clear}>
@@ -16,8 +24,9 @@ export default function Carrito() {
             <button className="btn buyBtn ">Volver</button>
           </Link>
         </div>
-        <div className="container-fluid">
-          <div className="row">
+
+        <div className="container-fluid  ">
+          <div className="row ">
             {cart.map((unidad) => (
               <div
                 className="row d-flex justify-content-center detail_container py-2"
@@ -41,7 +50,7 @@ export default function Carrito() {
                         Cantidad: {unidad.quantity}
                       </p>
                       <p className=" card-text text-center fonts">
-                        {unidad.quantity * unidad.item.precio} Precio Final
+                        Precio Final: {unidad.quantity * unidad.item.precio}
                       </p>
 
                       <div className="buy d-flex containerBtn">

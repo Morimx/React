@@ -33,7 +33,6 @@
 }
 
 .detail_container .card-text::before {
-  content: "$";
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0.3rem 2em 0;
