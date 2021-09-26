@@ -11,14 +11,14 @@ export default function CartContextProvider({ children }) {
 
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
-      const updateQty = [...cart];
-
-      updateQty.map((qty) => {
-        if (qty.item.id === item.id) {
-          return (qty.quantity += quantity);
-        }
-      });
-      setCart(updateQty);
+      setCart(
+        [...cart].map((qty) => {
+          if (qty.item.id === item.id) {
+            return (qty.quantity += quantity);
+          }
+          return qty;
+        })
+      );
     } else {
       return setCart([...cart, { item, quantity }]);
     }
