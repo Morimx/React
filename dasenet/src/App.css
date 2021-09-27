@@ -40,3 +40,8 @@
 .links {
   text-decoration: none;
 }
+
+.badgex {
+  border-style: dotted;
+  color: red;
+}

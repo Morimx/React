@@ -7,9 +7,11 @@ function CartWiget() {
 
   return (
     <>
-      <Badge className="btn-warning">
-        <FaCartArrowDown color="white" size={26} />
-        {badge}
+      <Badge pill bg="success">
+        <div>
+          <FaCartArrowDown color="white" size={26} />
+          {badge}
+        </div>
       </Badge>
     </>
   );
