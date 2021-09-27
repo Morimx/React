@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
@@ -8,19 +8,30 @@ export const CartContextUse = () => {
 
 export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const [badge, setBadge] = useState(0);
+
+  const badgeFunction = () => {
+    console.log(cart);
+    let badgeFinal = 0;
+    cart.forEach((x) => (badgeFinal += x.quantity));
+    setBadge(badgeFinal);
+  };
+
+  useEffect(() => {
+    badgeFunction();
+  }, [cart]);
 
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
-      setCart(
-        [...cart].map((qty) => {
-          if (qty.item.id === item.id) {
-            return (qty.quantity += quantity);
-          }
-          return qty;
-        })
-      );
+      const updateQty = [...cart];
+      updateQty.map((element) => {
+        if (element.item.id === item.id) {
+          return (element.quantity += quantity);
+        }
+      });
+      setCart(updateQty);
     } else {
-      return setCart([...cart, { item, quantity }]);
+      setCart([...cart, { item, quantity }]);
     }
   };
 
@@ -34,9 +45,8 @@ export default function CartContextProvider({ children }) {
     setCart(cartFilter);
   };
 
-  console.log("carrito", cart);
   return (
-    <CartContext.Provider value={{ cart, addItem, clear, removeItem }}>
+    <CartContext.Provider value={{ cart, addItem, clear, removeItem, badge }}>
       {children}
     </CartContext.Provider>
   );

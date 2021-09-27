@@ -3,18 +3,19 @@ import { CartContextUse } from "../../Context/CartContext";
 
 export default function Carrito() {
   const { clear, removeItem, cart } = CartContextUse();
-  const totalCarrito = cart.map(
+  /*const totalCarrito = cart.map(
     (unidad) => unidad.quantity * unidad.item.precio
   );
+
   let sumaTotal = 0;
   for (let i = 0; i < totalCarrito.length; i++) {
     sumaTotal += totalCarrito[i];
   }
-
+*/
   return (
     <>
       <h1 className=" text-center fonts">Tu Carrito</h1>
-      <h3 className="fonts text-center">Total del carrito ${sumaTotal}</h3>
+
       <div>
         <div className="d-flex justify-content-center">
           <button className="btn buyBtn " onClick={clear}>
