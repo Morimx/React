@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Item.css";
-//import { getFetch } from "../../utils/Mock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../Services/getFirebase";
@@ -38,8 +37,6 @@ export default function Item() {
         .finally(() => setLoading(false));
     }
   }, [idCategoria]);
-
-  console.log(productosState);
 
   return (
     <div className="d-flex justify-content-center mt-3">
