@@ -11,7 +11,6 @@ export default function CartContextProvider({ children }) {
   const [badge, setBadge] = useState(0);
 
   const badgeFunction = () => {
-    console.log(cart);
     let badgeFinal = 0;
     cart.forEach((x) => (badgeFinal += x.quantity));
     setBadge(badgeFinal);

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Item.css";
-import { getFetch } from "../../utils/Mock";
+//import { getFetch } from "../../utils/Mock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../../Services/getFirebase";
 
 export default function Item() {
   const [productosState, setProductos] = useState([]);
@@ -11,20 +12,34 @@ export default function Item() {
   const { idCategoria } = useParams();
 
   useEffect(() => {
-    if (idCategoria) {
-      getFetch.then((res) => {
-        setProductos(res.filter((prod) => prod.tipo === idCategoria));
-        setLoading(false);
-      });
-    } else {
-      getFetch
-        .then((res) => {
-          setProductos(res);
-          setLoading(false);
+    const dbQuery = getFirestore();
+    if (idCategoria !== undefined) {
+      dbQuery
+        .collection("items")
+        .where("tipo", "==", idCategoria)
+        .get()
+        .then((resp) => {
+          setProductos(
+            resp.docs.map((item) => ({ id: item.id, ...item.data() }))
+          );
         })
-        .catch((error) => console.log(error));
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    } else {
+      dbQuery
+        .collection("items")
+        .get()
+        .then((resp) => {
+          setProductos(
+            resp.docs.map((item) => ({ id: item.id, ...item.data() }))
+          );
+        })
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
     }
   }, [idCategoria]);
+
+  console.log(productosState);
 
   return (
     <div className="d-flex justify-content-center mt-3">

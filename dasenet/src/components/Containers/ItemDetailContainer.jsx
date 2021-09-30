@@ -5,6 +5,7 @@ import "./Item.css";
 import { getFetch } from "../../utils/Mock";
 import { useParams } from "react-router-dom";
 import ItemListDetail from "../ItemList/ItemListDetail";
+import { getFirestore } from "../../Services/getFirebase";
 
 export default function ItemDetailContainer() {
   const [productosID, setProductos] = useState([]);
@@ -12,19 +13,18 @@ export default function ItemDetailContainer() {
   const { idProducto } = useParams();
 
   useEffect(() => {
-    if (idProducto) {
-      getFetch.then((res) => {
-        setProductos(res.filter((prod) => prod.id === idProducto));
-        setLoading(false);
-      });
-    } else {
-      getFetch
-        .then((res) => {
-          setProductos(res);
-          setLoading(false);
-        })
-        .catch((error) => console.log(error));
-    }
+    const dbQuery = getFirestore();
+    dbQuery
+      .collection("items")
+
+      .get()
+      .then((resp) => {
+        setProductos(
+          resp.docs.map((item) => ({ id: item.id, ...item.data() }))
+        );
+      })
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   }, [idProducto]);
 
   return (
