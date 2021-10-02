@@ -25,7 +25,11 @@ export default function CartContextProvider({ children }) {
       const updateQty = [...cart];
       updateQty.map((element) => {
         if (element.item.id === item.id) {
-          return (element.quantity += quantity);
+          element.quantity += quantity;
+          if (element.quantity > element.item.cantidad) {
+            alert("Se agoto el stock");
+            element.quantity = element.item.cantidad;
+          }
         }
       });
       setCart(updateQty);
