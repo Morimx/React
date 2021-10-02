@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CartContextUse } from "../../Context/CartContext";
+import ScrollButton from "./ScrollButton";
 
 export default function Carrito() {
   const { clear, removeItem, cart } = CartContextUse();
@@ -14,7 +15,9 @@ export default function Carrito() {
 
   return (
     <>
-      <h1 className=" text-center fonts">Tu Carrito</h1>
+      <h1 className=" text-center fonts" id="tucarrito">
+        Tu Carrito
+      </h1>
       <h2 className="fonts text-center">
         El total de tu carrito es: {sumaTotal}
       </h2>
@@ -28,8 +31,8 @@ export default function Carrito() {
           </Link>
         </div>
 
-        <div className="container-fluid  ">
-          <div className="row ">
+        <div className="container-fluid ">
+          <div className="row d-flex justify-content-center ">
             {cart.map((unidad) => (
               <div
                 className="row d-flex justify-content-center detail_container py-2"
@@ -72,6 +75,7 @@ export default function Carrito() {
           </div>
         </div>
       </div>
+      <ScrollButton></ScrollButton>
     </>
   );
 }
