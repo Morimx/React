@@ -94,3 +94,33 @@
 .Contadores {
   text-align: center;
 }
+
+.backBtn {
+  background-color: darkgrey;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5em 1.1rem;
+  padding-right: 20px;
+  margin: 1em 0;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+  -webkit-box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.terminarBtn {
+  background-color: green;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5em 1.1rem;
+  padding-right: 20px;
+  margin: 1em 0;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+  -webkit-box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+}

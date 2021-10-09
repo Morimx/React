@@ -23,12 +23,15 @@ export default function Carrito() {
       </h2>
       <div>
         <div className="d-flex justify-content-center">
-          <button className="btn buyBtn " onClick={clear}>
+          <Link to="/">
+            <button className="btn backBtn">Volver</button>
+          </Link>
+          <button className="btn buyBtn" onClick={clear}>
             Limpiar Carrito
           </button>
-          <Link to="/">
-            <button className="btn buyBtn ">Volver</button>
-          </Link>
+        </div>
+        <div className="d-flex justify-content-center">
+          <button className="btn terminarBtn ">Finalizar Compra</button>
         </div>
 
         <div className="container-fluid ">
