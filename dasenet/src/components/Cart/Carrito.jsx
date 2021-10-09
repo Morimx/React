@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContextUse } from "../../Context/CartContext";
 //import { getFirestore } from "../../Services/getFirebase";
@@ -6,8 +6,8 @@ import Form from "../Form/Form";
 import ScrollButton from "./ScrollButton";
 
 export default function Carrito() {
-  const { clear, removeItem, cart, cartTotal } = CartContextUse();
-  const [finalizarCompra, setfinalizarCompra] = useState(true);
+  const { clear, removeItem, cart, cartTotal, finalizarCompra, switchCarrito } =
+    CartContextUse();
 
   return (
     <>
@@ -29,10 +29,7 @@ export default function Carrito() {
               </button>
             </div>
             <div className="d-flex justify-content-center">
-              <button
-                className="btn terminarBtn"
-                onClick={() => setfinalizarCompra(false)}
-              >
+              <button className="btn terminarBtn" onClick={switchCarrito}>
                 Finalizar Compra
               </button>
             </div>

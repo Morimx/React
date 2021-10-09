@@ -11,11 +11,19 @@ export default function CartContextProvider({ children }) {
   const [badge, setBadge] = useState(0);
   const [cartTotal, setCartTotal] = useState("");
   const [cartAmount, setCartAmount] = useState("");
+  const [finalizarCompra, setfinalizarCompra] = useState(true);
 
   const badgeFunction = () => {
     let badgeFinal = 0;
     cart.forEach((x) => (badgeFinal += x.quantity));
     setBadge(badgeFinal);
+  };
+  const switchCarrito = () => {
+    if (finalizarCompra === true) {
+      setfinalizarCompra(false);
+    } else {
+      setfinalizarCompra(true);
+    }
   };
 
   useEffect(() => {
@@ -73,6 +81,8 @@ export default function CartContextProvider({ children }) {
         badge,
         cartTotal,
         cartAmount,
+        finalizarCompra,
+        switchCarrito,
       }}
     >
       {children}
