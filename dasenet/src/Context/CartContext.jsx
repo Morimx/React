@@ -9,6 +9,8 @@ export const CartContextUse = () => {
 export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [badge, setBadge] = useState(0);
+  const [cartTotal, setCartTotal] = useState("");
+  const [cartAmount, setCartAmount] = useState("");
 
   const badgeFunction = () => {
     let badgeFinal = 0;
@@ -48,8 +50,31 @@ export default function CartContextProvider({ children }) {
     setCart(cartFilter);
   };
 
+  useEffect(() => {
+    const total = cart.reduce(
+      (acc, unidad) => acc + unidad.quantity * unidad.item.precio,
+      0
+    );
+    setCartTotal(total);
+  }, [cart]);
+
+  useEffect(() => {
+    const amount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    setCartAmount(amount);
+  }, [cart]);
+
   return (
-    <CartContext.Provider value={{ cart, addItem, clear, removeItem, badge }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addItem,
+        clear,
+        removeItem,
+        badge,
+        cartTotal,
+        cartAmount,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

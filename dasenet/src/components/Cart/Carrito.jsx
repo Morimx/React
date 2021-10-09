@@ -6,16 +6,8 @@ import Form from "../Form/Form";
 import ScrollButton from "./ScrollButton";
 
 export default function Carrito() {
-  const { clear, removeItem, cart } = CartContextUse();
+  const { clear, removeItem, cart, cartTotal } = CartContextUse();
   const [finalizarCompra, setfinalizarCompra] = useState(true);
-  const totalCarrito = cart.map(
-    (unidad) => unidad.quantity * unidad.item.precio
-  );
-
-  let sumaTotal = 0;
-  for (let i = 0; i < totalCarrito.length; i++) {
-    sumaTotal += totalCarrito[i];
-  }
 
   return (
     <>
@@ -25,7 +17,7 @@ export default function Carrito() {
             Tu Carrito
           </h1>
           <h2 className="fonts text-center">
-            El total de tu carrito es: {sumaTotal}
+            El total de tu carrito es: {cartTotal}
           </h2>
           <div>
             <div className="d-flex justify-content-center">
@@ -92,7 +84,7 @@ export default function Carrito() {
           <ScrollButton></ScrollButton>
         </>
       ) : (
-        <Form />
+        <Form finalizarCompra={finalizarCompra} />
       )}
     </>
   );
