@@ -1,7 +1,5 @@
-//import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContextUse } from "../../Context/CartContext";
-//import { getFirestore } from "../../Services/getFirebase";
 import Form from "../Form/Form";
 import ScrollButton from "./ScrollButton";
 
