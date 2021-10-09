@@ -18,6 +18,7 @@ export default function CartContextProvider({ children }) {
     cart.forEach((x) => (badgeFinal += x.quantity));
     setBadge(badgeFinal);
   };
+
   const switchCarrito = () => {
     if (finalizarCompra === true) {
       setfinalizarCompra(false);
