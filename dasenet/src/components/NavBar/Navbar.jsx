@@ -7,7 +7,7 @@ function Navbarxd() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <Link to="/">
             <Brand />
           </Link>
@@ -15,29 +15,25 @@ function Navbarxd() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/categoria/servicios" className="links">
-              <Nav.Link href="#servicios">Servicios</Nav.Link>
-            </Link>
+            <Nav.Link className="links" as={Link} to="/categoria/servicios">
+              Servicios
+            </Nav.Link>
 
             <NavDropdown title="Componentes" id="collasible-nav-dropdown">
-              <Link to="/categoria/CPU" className="links">
-                <NavDropdown.Item href="#action/3.1">
-                  Microprocesadores
-                </NavDropdown.Item>
-              </Link>
-              <Link to="/categoria/Memorias" className="links">
-                <NavDropdown.Item href="#action/3.2">
-                  Memorias Ram
-                </NavDropdown.Item>
-              </Link>
-              <Link to="/categoria/VGA" className="links">
-                <NavDropdown.Item href="#action/3.3">
-                  Placas de video
-                </NavDropdown.Item>
-              </Link>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Presupuesto personalizado
+              <NavDropdown.Item className="links" as={Link} to="/categoria/CPU">
+                Microprocesadores
+              </NavDropdown.Item>
+
+              <NavDropdown.Item
+                className="links"
+                as={Link}
+                to="/categoria/Memorias"
+              >
+                Memorias Ram
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="links" as={Link} to="/categoria/VGA">
+                Placas de video
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

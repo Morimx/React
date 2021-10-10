@@ -34,7 +34,7 @@ export default function CartContextProvider({ children }) {
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
       const updateQty = [...cart];
-      updateQty.map((element) => {
+      updateQty.forEach((element) => {
         if (element.item.id === item.id) {
           element.quantity += quantity;
           if (element.quantity > element.item.cantidad) {
