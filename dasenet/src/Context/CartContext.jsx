@@ -29,7 +29,7 @@ export default function CartContextProvider({ children }) {
 
   useEffect(() => {
     badgeFunction();
-  }, [cart]);
+  });
 
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {

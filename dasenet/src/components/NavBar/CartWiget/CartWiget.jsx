@@ -3,16 +3,18 @@ import Badge from "react-bootstrap/Badge";
 import { CartContextUse } from "../../../Context/CartContext";
 
 function CartWiget() {
-  const { badge } = CartContextUse();
+  const { badge, cart } = CartContextUse();
 
   return (
     <>
-      <Badge pill bg="success">
-        <div>
+      {cart.length === 0 ? (
+        <FaCartArrowDown color="white" size={26} />
+      ) : (
+        <Badge pill bg="success">
           <FaCartArrowDown color="white" size={26} />
           {badge}
-        </div>
-      </Badge>
+        </Badge>
+      )}
     </>
   );
 }

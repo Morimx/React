@@ -2,10 +2,8 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import CartWiget from "./CartWiget/CartWiget.jsx";
 import Brand from "./Logo.jsx";
 import { Link } from "react-router-dom";
-import { CartContextUse } from "../../Context/CartContext.jsx";
 
 function Navbarxd() {
-  const { cart } = CartContextUse();
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -45,12 +43,9 @@ function Navbarxd() {
           </Nav>
           <Nav></Nav>
         </Navbar.Collapse>
-
-        {cart.length === 0 ? null : (
-          <Link to="/carrito">
-            <CartWiget />
-          </Link>
-        )}
+        <Link to="/carrito">
+          <CartWiget />
+        </Link>
       </Container>
     </Navbar>
   );
