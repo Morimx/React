@@ -5,16 +5,20 @@ import { getFirestore } from "../../Services/getFirebase";
 import OrderDetail from "./ordenDetails";
 import firebase from "firebase";
 import "firebase/firestore";
+import OrdenCompleta from "./OrdenCompleta";
 
 export default function Form() {
   const { cart, cartTotal, cartAmount, switchCarrito } = CartContextUse();
   let validacionForm;
+  const [statusOrden, setStatusOrden] = useState(true);
+  const [ordenID, setOrdenID] = useState("");
   const [formData, setFormData] = useState({
     Nombre: "",
     Telefono: "",
     email: "",
     Direccion: "",
   });
+
   const handleOnSubmit = () => {
     let orden = {};
 
@@ -32,7 +36,8 @@ export default function Form() {
     const db = getFirestore();
     db.collection("orders")
       .add(orden)
-      .then((resp) => alert(resp.id));
+      .then(setStatusOrden(false))
+      .then((resp) => setOrdenID(resp.id));
   };
   const handleOnChange = (change) => {
     setFormData({
@@ -54,73 +59,77 @@ export default function Form() {
 
   return (
     <>
-      <div className="container-fluid containerForm ">
-        <form onChange={handleOnChange}>
-          <OrderDetail />
-          <div className="form-group mt-3">
-            <label htmlFor="name">Nombre y Apellido</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Ingrese su nombre y apellido completo"
-              id="name"
-              name="Nombre"
-              defaultValue={formData.Nombre}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Teléfono</label>
-            <input
-              type="number"
-              className="form-control"
-              placeholder="Ingrese su telefono con codigo de area"
-              id="phone"
-              name="Telefono"
-              defaultValue={formData.Telefono}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Correo Electrónico</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Ingrese su email"
-              id="email"
-              name="email"
-              defaultValue={formData.email}
-              required
-            />
-          </div>
-          <div className="form-group ">
-            <label htmlFor="address">Dirección</label>
-            <input
-              type="text"
-              className="form-control"
-              id="address"
-              name="Direccion"
-              defaultValue={formData.Direccion}
-              placeholder="Ingrese su direccion"
-              required
-            />
-          </div>
-        </form>
-        <div className="d-flex justify-content-between">
-          {validacionForm ? null : (
-            <button
-              type="submit"
-              className="btn botoncitoMagico"
-              onClick={handleOnSubmit}
-            >
-              Enviar Orden
+      {statusOrden ? (
+        <div className="container-fluid containerForm ">
+          <form onChange={handleOnChange}>
+            <OrderDetail />
+            <div className="form-group mt-3">
+              <label htmlFor="name">Nombre y Apellido</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Ingrese su nombre y apellido completo"
+                id="name"
+                name="Nombre"
+                defaultValue={formData.Nombre}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone">Teléfono</label>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="Ingrese su telefono con codigo de area"
+                id="phone"
+                name="Telefono"
+                defaultValue={formData.Telefono}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Correo Electrónico</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Ingrese su email"
+                id="email"
+                name="email"
+                defaultValue={formData.email}
+                required
+              />
+            </div>
+            <div className="form-group ">
+              <label htmlFor="address">Dirección</label>
+              <input
+                type="text"
+                className="form-control"
+                id="address"
+                name="Direccion"
+                defaultValue={formData.Direccion}
+                placeholder="Ingrese su direccion"
+                required
+              />
+            </div>
+          </form>
+          <div className="d-flex justify-content-between">
+            {validacionForm ? null : (
+              <button
+                type="submit"
+                className="btn botoncitoMagico"
+                onClick={handleOnSubmit}
+              >
+                Enviar Orden
+              </button>
+            )}
+            <button className="btn botoncitoMagico " onClick={switchCarrito}>
+              Volver al carrito
             </button>
-          )}
-          <button className="btn botoncitoMagico " onClick={switchCarrito}>
-            Volver al carrito
-          </button>
+          </div>
         </div>
-      </div>
+      ) : (
+        <OrdenCompleta ordenID={ordenID}></OrdenCompleta>
+      )}
     </>
   );
 }
