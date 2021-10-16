@@ -1,4 +1,3 @@
-import React from "react";
 import { CartContextUse } from "../../Context/CartContext.jsx";
 import Carrito from "../Cart/Carrito.jsx";
 import "./Item.css";

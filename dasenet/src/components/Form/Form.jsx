@@ -5,10 +5,10 @@ import { getFirestore } from "../../Services/getFirebase";
 import OrderDetail from "./ordenDetails";
 import firebase from "firebase";
 import "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default function Form() {
-  const { cart, cartTotal, cartAmount, switchCarrito, clear, MySwal } =
-    CartContextUse();
+  const { cart, cartTotal, cartAmount, clear, MySwal } = CartContextUse();
   let validacionForm;
   const [formData, setFormData] = useState({
     Nombre: "",
@@ -126,9 +126,11 @@ export default function Form() {
               Enviar Orden
             </button>
           )}
-          <button className="btn botoncitoMagico " onClick={switchCarrito}>
-            Volver al carrito
-          </button>
+          <Link to="/">
+            <button className="btn botoncitoMagico ">
+              Volver a los productos
+            </button>
+          </Link>
         </div>
       </div>
     </>
