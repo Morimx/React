@@ -8,7 +8,8 @@ import "firebase/firestore";
 import OrdenCompleta from "./OrdenCompleta";
 
 export default function Form() {
-  const { cart, cartTotal, cartAmount, switchCarrito } = CartContextUse();
+  const { cart, cartTotal, cartAmount, switchCarrito, clear } =
+    CartContextUse();
   let validacionForm;
   const [statusOrden, setStatusOrden] = useState(true);
   const [ordenID, setOrdenID] = useState("");
