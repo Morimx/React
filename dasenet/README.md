@@ -35,8 +35,8 @@ Recordar que tiene un backend realizado con Firebase, por si quieren descargar y
 
 ## Estructura
 
-![estructura](https://imgur.com/Grx7j2h)
-![estructura](https://imgur.com/P0mpTEo)
+![estructura](https://user-images.githubusercontent.com/82421851/137597048-d65984b3-8847-46d1-ae6c-67eef57a7a85.jpg)
+![estructura](https://user-images.githubusercontent.com/82421851/137597049-c6a2004e-0479-4565-b0ba-c052ba264c7b.jpg)
 
 ## ScreenShots
 
