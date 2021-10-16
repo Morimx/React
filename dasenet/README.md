@@ -36,16 +36,18 @@ Recordar que tiene un backend realizado con Firebase, por si quieren descargar y
 ## Estructura
 
 ![estructura](https://user-images.githubusercontent.com/82421851/137597049-c6a2004e-0479-4565-b0ba-c052ba264c7b.jpg)
-
 <br />
 
 ![estructura](https://user-images.githubusercontent.com/82421851/137597048-d65984b3-8847-46d1-ae6c-67eef57a7a85.jpg)
 
 ## ScreenShots
 
-![image00]()
-![image01]()
-![image02]()
+![Screenshot_1](https://user-images.githubusercontent.com/82421851/137597319-fafbec83-08ee-4706-ad59-d4098bccaf59.jpg)
+![Screenshot_2](https://user-images.githubusercontent.com/82421851/137597321-171f83c7-6647-4565-97ee-c5f770e79f0f.jpg)
+![Screenshot_3](https://user-images.githubusercontent.com/82421851/137597322-98890f6e-bbcd-4246-9f6d-dd99cbdd6f31.jpg)
+![Screenshot_4](https://user-images.githubusercontent.com/82421851/137597324-0ef4d0fc-5b97-4b3e-a6fa-c7c0aecd1bf3.jpg)
+![Screenshot_5](https://user-images.githubusercontent.com/82421851/137597325-2225b8e0-3cad-4385-bbef-38250b3d6d4d.jpg)
+![Screenshot_6](https://user-images.githubusercontent.com/82421851/137597326-463d1a3a-0a98-4f95-97e6-3f0b5297a6e7.jpg)
 
 ## VIDEO
 
