@@ -1,15 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ItemCount.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export const ItemCount = ({ onAdd, producto }) => {
   const [count, setCount] = useState(1);
+  const MySwal = withReactContent(Swal);
 
   function sumar() {
     if (count < producto.cantidad) {
       setCount(count + 1);
     } else {
-      alert("No hay mas existencias en stock");
+      MySwal.fire({
+        didOpen: () => {
+          MySwal.clickConfirm();
+        },
+      }).then(() => {
+        return MySwal.fire(<p>No hay mas existencias en stock</p>);
+      });
     }
   }
 

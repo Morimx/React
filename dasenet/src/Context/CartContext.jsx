@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const CartContext = createContext();
 
@@ -12,6 +14,7 @@ export default function CartContextProvider({ children }) {
   const [cartTotal, setCartTotal] = useState("");
   const [cartAmount, setCartAmount] = useState("");
   const [finalizarCompra, setfinalizarCompra] = useState(true);
+  const MySwal = withReactContent(Swal);
 
   const badgeFunction = () => {
     let badgeFinal = 0;
@@ -34,12 +37,19 @@ export default function CartContextProvider({ children }) {
   const addItem = (item, quantity) => {
     if (isInCart(item.id)) {
       const updateQty = [...cart];
+
       updateQty.forEach((element) => {
         if (element.item.id === item.id) {
           element.quantity += quantity;
           if (element.quantity > element.item.cantidad) {
-            alert("Se agoto el stock");
             element.quantity = element.item.cantidad;
+            MySwal.fire({
+              didOpen: () => {
+                MySwal.clickConfirm();
+              },
+            }).then(() => {
+              return MySwal.fire(<p>No hay mas stock en existencia</p>);
+            });
           }
         }
       });
