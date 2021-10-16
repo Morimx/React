@@ -5,11 +5,9 @@ import { getFirestore } from "../../Services/getFirebase";
 import OrderDetail from "./ordenDetails";
 import firebase from "firebase";
 import "firebase/firestore";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 export default function Form() {
-  const { cart, cartTotal, cartAmount, switchCarrito, clear } =
+  const { cart, cartTotal, cartAmount, switchCarrito, clear, MySwal } =
     CartContextUse();
   let validacionForm;
   const [formData, setFormData] = useState({
@@ -18,7 +16,6 @@ export default function Form() {
     email: "",
     Direccion: "",
   });
-  const MySwal = withReactContent(Swal);
 
   const handleOnSubmit = () => {
     let orden = {};

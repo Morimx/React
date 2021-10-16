@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContextUse } from "../../Context/CartContext";
 import "./ItemCount.css";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 export const ItemCount = ({ onAdd, producto }) => {
   const [count, setCount] = useState(1);
-  const MySwal = withReactContent(Swal);
+  const { MySwal } = CartContextUse();
 
   function sumar() {
     if (count < producto.cantidad) {

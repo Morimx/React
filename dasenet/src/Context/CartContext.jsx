@@ -13,7 +13,6 @@ export default function CartContextProvider({ children }) {
   const [badge, setBadge] = useState(0);
   const [cartTotal, setCartTotal] = useState("");
   const [cartAmount, setCartAmount] = useState("");
-
   const MySwal = withReactContent(Swal);
 
   const badgeFunction = () => {
@@ -88,6 +87,7 @@ export default function CartContextProvider({ children }) {
         badge,
         cartTotal,
         cartAmount,
+        MySwal,
       }}
     >
       {children}
