@@ -1,11 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContextUse } from "../../Context/CartContext";
 import Form from "../Form/Form";
 import ScrollButton from "./ScrollButton";
 
 export default function Carrito() {
-  const { clear, removeItem, cart, cartTotal, finalizarCompra, switchCarrito } =
-    CartContextUse();
+  const { clear, removeItem, cart, cartTotal } = CartContextUse();
+  const [finalizarCompra, setfinalizarCompra] = useState(true);
 
   return (
     <>
@@ -27,7 +28,10 @@ export default function Carrito() {
               </button>
             </div>
             <div className="d-flex justify-content-center">
-              <button className="btn terminarBtn" onClick={switchCarrito}>
+              <button
+                className="btn terminarBtn"
+                onClick={() => setfinalizarCompra(false)}
+              >
                 Finalizar Compra
               </button>
             </div>
@@ -79,7 +83,7 @@ export default function Carrito() {
           <ScrollButton></ScrollButton>
         </>
       ) : (
-        <Form finalizarCompra={finalizarCompra} />
+        <Form />
       )}
     </>
   );

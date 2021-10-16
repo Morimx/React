@@ -40,6 +40,7 @@ export default function Form() {
       .then((resp) =>
         MySwal.fire({
           title: <strong>Gracias por su compra</strong>,
+          confirmButtonColor: "green",
           html: <i>Su id de compra es {resp.id}</i>,
           icon: "success",
         })
@@ -122,7 +123,7 @@ export default function Form() {
           {validacionForm ? null : (
             <button
               type="submit"
-              className="btn botoncitoMagico"
+              className="btn botoncitoMagicoEnviar"
               onClick={handleOnSubmit}
             >
               Enviar Orden

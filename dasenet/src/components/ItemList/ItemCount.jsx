@@ -17,7 +17,11 @@ export const ItemCount = ({ onAdd, producto }) => {
           MySwal.clickConfirm();
         },
       }).then(() => {
-        return MySwal.fire(<p>No hay mas existencias en stock</p>);
+        return MySwal.fire({
+          confirmButtonColor: "red",
+          text: "No hay mas existencias en stock",
+          icon: "error",
+        });
       });
     }
   }
